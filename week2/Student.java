@@ -21,6 +21,7 @@ public class Student {
         
         // Praktik baik: gunakan setter di dalam konstruktor agar validasi tetap berjalan
         this.setScore(score); 
+        
     }
 
     // 4. ACCESSORS (Getters): Method untuk membaca data private
@@ -35,6 +36,8 @@ public class Student {
     public int getNim() {
         return this.nim;
     }
+
+    
     
 
     // 5. MUTATORS (Setters): Method untuk mengubah data private secara aman

@@ -1,7 +1,8 @@
 package JavaSem2.week2;
 import java.util.Scanner;
+import java.util.Random;
 
- public class ClassAnalyzerOOP {
+ public class ClassAnalyzerOOP2 {
      
      public static void main(String[] args) {
          Scanner console = new Scanner(System.in);
@@ -32,16 +33,18 @@ import java.util.Scanner;
               classList[i] = new Student(name, score, nim, attendance);
           }
           
+          
        // Fitur Curving: 1. Mencari nilai maksimal dengan Getter
-         int maxScore = 0;
+         int nilaiMax = 100;
+         int cariMax= 0;
          for (int i = 0; i < classList.length; i++) {   
-              if (classList[i].getScore() > maxScore) {
-                 maxScore = classList[i].getScore();
+              if (classList[i].getScore() > cariMax) {
+                 cariMax = classList[i].getScore();
               }
          }
           
           // Fitur Curving: 2. Menghitung selisih dan memodifikasi objek dengan Setter
-          int curve =  - maxScore;
+          int curve =  nilaiMax - cariMax;
           if (curve > 0) {
               System.out.println("\n[Info] Menerapkan curve sebesar +" + curve + " poin.");
               for (int i = 0; i < classList.length; i++) {
@@ -51,6 +54,20 @@ import java.util.Scanner;
          } else {
              System.out.println("\n[Info] Tidak ada curve yang diterapkan.");
          }
+        
+        //lucky draw
+         if (classList.length == 0) {
+             console.close();
+             return; 
+         }
+
+         Random rand = new Random();
+         int luckyIndex = rand.nextInt(classList.length);
+         if (classList[luckyIndex].getScore() < nilaiMax) {
+         classList[luckyIndex].setScore(classList[luckyIndex].getScore() + 5);
+         }
+         System.out.println("\n[Info] Mahasiswa " + classList[luckyIndex].getName() + " mendapat bonus " + (nilaiMax - cariMax) + " poin.");
+
          
          // Mencetak Rapor Akhir
         System.out.println("\n--- Rapor Akhir Kelas ---");
