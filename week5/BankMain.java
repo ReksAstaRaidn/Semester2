@@ -14,6 +14,7 @@ public class BankMain {
 
         System.out.println("---------------------------------");
         System.out.println("Nasabah: " + akun1.getName() + " memiliki saldo: " + "Rp " + akun1.getBalance());
+        System.out.println("---------------------------------");
+        System.out.println(akun1);
     }
-    
 }
