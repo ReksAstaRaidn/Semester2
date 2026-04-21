@@ -44,4 +44,44 @@ public class LinkedIntList {
             current.next = new ListNode(value);
         }
     }
+
+    public int size() {
+        int count = 0;
+        ListNode current = front;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
+    public boolean contains(int value) {
+        ListNode current = front;
+        while (current != null) {
+            if (current.data == value) {
+                return true; // Nilai ditemukan
+            }
+            current = current.next;
+        }
+        return false; // Nilai tidak ditemukan setelah traversing seluruh list
+    }
+
+    public void remove(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+        }
+        
+        if (index == 0) {
+            // Hapus node pertama
+            front = front.next;
+        } else {
+            // Temukan node sebelum node yang akan dihapus
+            ListNode current = front;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            // Lewati node yang akan dihapus
+            current.next = current.next.next;
+        }
+    }
 }
