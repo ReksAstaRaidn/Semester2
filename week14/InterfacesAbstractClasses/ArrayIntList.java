@@ -30,12 +30,12 @@ public class ArrayIntList extends AbstractIntList {
     }
 
     public int get(int index) {
-        cekIndeks(index);
+        checkIndex(index);
         return elementData[index];
     }
 
     public void remove(int index) {
-       
+        checkIndex(index);
         for (int i = index; i < size - 1; i++) {
             elementData[i] = elementData[i + 1];
         }

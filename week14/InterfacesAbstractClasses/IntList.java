@@ -1,5 +1,3 @@
-package InterfacesAbstractClasses;
-
 public interface IntList {
     int size();
     boolean isEmpty();

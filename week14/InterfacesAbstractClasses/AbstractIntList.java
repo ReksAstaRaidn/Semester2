@@ -1,4 +1,4 @@
-public abstract class AbsractIntList implements IntList {
+public abstract class AbstractIntList implements IntList {
     // 1. Metode isEmpty() sama persis untuk Array dan Linked List
     // Karena kita tahu pasti ada metode size() (dari interface), kita bisa memanggilnya!
     @Override

@@ -1,4 +1,4 @@
-public class LinkedIntList extends AbsractIntList {
+public class LinkedIntList extends AbstractIntList {
 
     private ListNode front; // Penunjuk elemen pertama (Head)
     
@@ -51,17 +51,6 @@ public class LinkedIntList extends AbsractIntList {
             current = current.next;
         }
         return count;
-    }
-
-    public boolean contains(int value) {
-        ListNode current = front;
-        while (current != null) {
-            if (current.data == value) {
-                return true; // Nilai ditemukan
-            }
-            current = current.next;
-        }
-        return false; // Nilai tidak ditemukan setelah traversing seluruh list
     }
 
     public void remove(int index) {
