@@ -1,7 +1,3 @@
-package JavaSem2.week12;
-
-
-
 public class ListNode {
 
     public int data;
