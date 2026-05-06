@@ -71,4 +71,46 @@ public class LinkedIntList extends AbstractIntList {
             current.next = current.next.next;
         }
     }
+
+    public int get(int index) {
+        checkIndex(index); // Gunakan metode bantuan dari AbstractIntList
+        
+        ListNode current = front;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
+    }
+
+    public int indexOf(int value) {
+        ListNode current = front;
+        int index = 0;
+        while (current != null) {
+            if (current.data == value) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1; // Tidak ditemukan
+    }
+
+
+    @Override
+    public void add(int index, int value) {
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+        }
+        
+        if (index == 0) {
+            addFront(value);
+        } else {
+            ListNode current = front;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            // Sisipkan node baru di antara current dan current.next
+            current.next = new ListNode(value, current.next);
+        }
+    }
 }
