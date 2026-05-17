@@ -1,5 +1,3 @@
-package JavaSem2.TeoriStrukturData;
-
 public class MergeSort {
      /** The method for sorting the numbers */
     
